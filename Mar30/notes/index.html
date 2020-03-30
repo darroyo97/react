@@ -4,27 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>React</title>
+    <title>myReact</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
     <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
-    <script type="text/babel" src="./Corona.js"></script>
+    <script type="text/babel" src="./Name.js"></script>
 </head>
 
 <body>
 
     <div id="root"></div>
     <script type="text/babel">
-        let markup = <div>
-            <Corona />
-            <Corona />
-        </div>
-        // ReactDOM.render(<Corona />, document.getElementById('root'))
-        ReactDOM.render(markup, document.getElementById('root'))
+        ReactDOM.render(<Name />, document.getElementById('root'))
+
     </script>
+
 </body>
 
 </html>

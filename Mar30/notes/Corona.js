@@ -1,3 +1,6 @@
+let corona = "Corona Virus PPE"
+let isMarkup = true;
+
 function Corona() {
     return (<div>
         <div className="row">
