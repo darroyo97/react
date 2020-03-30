@@ -6,16 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>React</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
     <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
     <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+    <script type="text/babel" src="./Corona.js"></script>
 </head>
 
 <body>
 
     <div id="root"></div>
     <script type="text/babel">
-        ReactDOM.render(<h1>Hello World</h1>, document.getElementById('root'))
+
+        let corona = "Corona Virus PPE"
+        let isMarkup = true;
+
+        ReactDOM.render(<Corona />, document.getElementById('root'))
 
     </script>
 </body>
