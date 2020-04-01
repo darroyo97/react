@@ -5,21 +5,25 @@ import React, { Component } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import { Dropdown } from 'react-bootstrap'
 import Bootdrop from './components/Bootdrop'
+import Calculator from './components/Calculator'
 
-let daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+// let daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+let calc = ["X", "+", "=", "-"]
 class App extends Component {
   render() {
     return (
-      <Container fluid>
-        <Row>
-          <Col md={{ span: 4, offset: 4 }}>
-            {/* <Simpledropdown days={daysOfWeek} /> */}
-            <Bootdrop days={daysOfWeek} />
-          </Col>
-        </Row>
+
+      <Calculator />
+      // <Container fluid>
+      //   <Row>
+      //     <Col md={{ span: 4, offset: 4 }}>
+      //       {/* <Simpledropdown days={daysOfWeek} /> */}
+      //       <Bootdrop days={daysOfWeek} />
+      //     </Col>
+      //   </Row>
 
 
-      </Container>
+      // </Container>
       // <div>
       //   {/* Our app */}
       //   <br />
