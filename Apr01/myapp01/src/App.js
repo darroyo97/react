@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import Child from './componets/Child'
+// import Child from './componets/Child'
+import Stepper from './componets/Stepper'
 class App extends Component {
   render() {
     // let people = ['Dani', 'Jasso', 'Juan', 'Gio', 'Jackie']
@@ -12,7 +13,8 @@ class App extends Component {
       //   }
       // </ul>
       <div>
-        <Child txt={"Hello World"} integer={4} />
+        {/* <Child /> */}
+        <Stepper />
       </div>
     )
   }
