@@ -1,34 +1,85 @@
 import React, { Component } from 'react'
 
-
 class News extends Component {
-    
+
     constructor(props) {
         super(props)
 
         this.state = {
-            articles: []
+            articles: [],
+            searchResults: ""
         }
     }
 
+    componentDidMount = () => {
 
-    componentDidMount = (params) => {
-        
-        let url = "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=0cf790498275413a9247f8b94b3843fd"
+        let url = 'https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=0cf790498275413a9247f8b94b3843fd'
+
         fetch(url)
             .then(response => {
-            return response.json()
+                return response.json()
             })
-            .then(articles => {
-            
+            .then(news => {
+
+                this.setState({
+                    articles: news.articles
+                })
+            })
+
+    }
+
+    handleChange = (e) => {
+
+        this.setState({
+            searchResults: e.target.value
         })
     }
 
     render() {
+
+        // let articleList = this.state.articles.map((article, index) => {
+
+        //     return <li>
+        //         <h4>{article.title}</h4>
+        //         <br />
+        //         <img src={article.urlToImage} height="150px" />
+        //         <p>{article.description}</p>
+        //     </li>
+        // })
+
+        // let newArray = Array.filter((obj) => {
+
+        //     return true false
+        // })
+
+        let filteredList = this.state.articles.filter((article, index) => {
+
+            return article.title.toLowerCase().includes(this.state.searchResults.toLowerCase())
+        })
+
+        let articleList = filteredList.map((article, index) => {
+
+            return <li>
+                <h4>{article.title}</h4>
+                <br />
+                <img src={article.urlToImage} height="150px" />
+                <p>{article.description}</p>
+            </li>
+        })
+
+
+
+
+
         return (
-            <div>
-                
-            </div>
+            <>
+                {this.state.searchResults}<br />
+                <input type="text" onChange={this.handleChange} />
+                <ul>
+                    {articleList}
+                </ul>
+
+            </>
         )
     }
 }

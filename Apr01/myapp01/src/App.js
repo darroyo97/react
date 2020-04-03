@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 // import Child from './componets/Child'
 import Stepper from './componets/Stepper'
+import News from './News'
 class App extends Component {
   render() {
     // let people = ['Dani', 'Jasso', 'Juan', 'Gio', 'Jackie']
@@ -14,7 +15,8 @@ class App extends Component {
       // </ul>
       <div>
         {/* <Child /> */}
-        <Stepper />
+        {/* <Stepper /> */}
+        <News />
       </div>
     )
   }
