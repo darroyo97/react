@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import './App.css'
+import H2 from './components/H2'
+import H1 from './components/H1'
+// import H3 from './components/H3'
 
 class App extends Component {
 
@@ -20,11 +23,8 @@ class App extends Component {
   }
 
   addTaskItem = () => {
-    // get current value of our inputTXT
     let input = this.state.inputTxt
-    //current array
     let tasks = this.state.tasks
-    //push
     tasks.push(input);
     this.setState({
       tasks: tasks,
@@ -32,14 +32,10 @@ class App extends Component {
     }, () => {
       console.log(this.state.tasks)
     })
-    // this.setState({}, () => {
-
-    // } )
   }
 
   render() {
 
-    // let {tasks, inputTxt} = this.state 
     let taskList = this.state.tasks.map((tasks, index) => {
       return <li key={index}>{tasks}</li>
     })
@@ -47,14 +43,15 @@ class App extends Component {
     return (
       <div className="todo-form">
         <br />
-        <input type="text" value={this.state.inputTxt} onChange={this.handleInput} />
-
-        <button onClick={this.addTaskItem}>Add Task</button>
+        <H2 value={this.state.inputTxt} onChange={this.handleInput} />
+        <H1 onClick={this.addTaskItem} />
         <br />
 
         <ul>
           {taskList}
         </ul>
+        {/* <H3 taskList={this.state.taskList} /> */}
+
       </div>
     )
   }
