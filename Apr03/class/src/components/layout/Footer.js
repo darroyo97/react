@@ -4,7 +4,7 @@ export class Footer extends Component {
     render() {
         return (
             <>
-                Footer
+                Copyright 2020
             </>
         )
     }
