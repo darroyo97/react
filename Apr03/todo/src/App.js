@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './App.css'
 import H2 from './components/H2'
 import H1 from './components/H1'
-// import H3 from './components/H3'
+import H3 from './components/H3'
 
 class App extends Component {
 
@@ -36,22 +36,24 @@ class App extends Component {
 
   render() {
 
-    let taskList = this.state.tasks.map((tasks, index) => {
+    let taskLists = this.state.tasks.map((tasks, index) => {
       return <li key={index}>{tasks}</li>
     })
 
     return (
-      <div className="todo-form">
-        <br />
-        <H2 value={this.state.inputTxt} onChange={this.handleInput} />
-        <H1 onClick={this.addTaskItem} />
-        <br />
+      <div className="App">
+        <div className="todo-form">
+          <br />
+          <H2 value={this.state.inputTxt} onChange={this.handleInput} />
+          <H1 onClick={this.addTaskItem} />
+          <br />
 
-        <ul>
-          {taskList}
-        </ul>
-        {/* <H3 taskList={this.state.taskList} /> */}
+          {/* <ul>
+          {taskLists}
+        </ul> */}
+          <H3 taskList={taskLists} />
 
+        </div>
       </div>
     )
   }
