@@ -30,9 +30,6 @@ class App extends Component {
     this.setState({
       clicks: this.state.clicks + 1
     })
-    //NO
-    // this.state.clicks = 5
-    // console.log(this.state.clicks);
   }
 
 
